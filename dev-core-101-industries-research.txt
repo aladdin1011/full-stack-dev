@@ -1,0 +1,5 @@
+Transport - Yandex.Go, inDriver
+Entertainment -Twitch, YooTube
+Finance - Kaspi.kz, Halyk bank
+Navigation - 2gis, Google Maps
+Food and Delivery - Wolt,Choco Food
