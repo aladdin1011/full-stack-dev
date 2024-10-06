@@ -1,3 +1,3 @@
 name = input("Как вас зовут?")
-age = input("Ваш возрасть?")
-print(age-2)
+age = int(input("Ваш возрасть?"))
+print(f"Привет, {name}. Тебе {age} лет.")
