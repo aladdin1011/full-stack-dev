@@ -1,0 +1,14 @@
+touch file.txt
+ls
+echo "Первая строка" >> file.txt
+cat file.txt
+echo "Вторая строка" >> file.txt
+cat file.txt
+head -n 2 file.txt
+tail -n 1 file.txt
+touch file2.txt
+ls
+mkdir newdir
+mv file.txt newdir/
+cp file2.txt newdir/
+
