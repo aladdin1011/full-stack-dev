@@ -1,0 +1,9 @@
+project:
+docs  src  tests
+
+project/docs:
+
+project/src:
+main.py  readme.txt
+
+project/tests:
