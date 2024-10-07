@@ -11,4 +11,12 @@ ls
 mkdir newdir
 mv file.txt newdir/
 cp file2.txt newdir/
-
+cd newdir
+mv file2.txt file3.txt
+ls
+rm file3.txt
+rm file.txt
+mkdir newdire
+mv newdire ~/
+cp file2.txt newdir
+rm -r newdir newdire
