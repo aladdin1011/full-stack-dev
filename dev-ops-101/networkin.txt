@@ -1,0 +1,33 @@
+root@zhas-server:~ # ping google.com
+PING google.com (142.250.185.206) 56(84) bytes of data.
+64 bytes from fra16s52-in-f14.1e100.net (142.250.185.206): icmp_seq=1 ttl=116 time=0.965 ms
+64 bytes from fra16s52-in-f14.1e100.net (142.250.185.206): icmp_seq=2 ttl=116 time=0.341 ms
+64 bytes from fra16s52-in-f14.1e100.net (142.250.185.206): icmp_seq=3 ttl=116 time=0.326 ms
+64 bytes from fra16s52-in-f14.1e100.net (142.250.185.206): icmp_seq=4 ttl=116 time=0.315 ms
+[1]+  Stopped                 ping google.com
+- Для проверки соеденение с сайтом
+root@zhas-server:~ # curl -I example.com
+HTTP/1.1 200 OK
+Content-Encoding: gzip
+Accept-Ranges: bytes
+Age: 520603
+Cache-Control: max-age=604800
+Content-Type: text/html; charset=UTF-8
+Date: Wed, 09 Oct 2024 06:10:38 GMT
+Etag: "3147526947+gzip"
+Expires: Wed, 16 Oct 2024 06:10:38 GMT
+Last-Modified: Thu, 17 Oct 2019 07:18:26 GMT
+Server: ECAcc (dcd/7D5F)
+X-Cache: HIT
+Content-Length: 648
+- Для проверки возвращает ли он правильные заголовки
+root@zhas-server:~ # nslookup google.com
+Server:         127.0.0.53
+Address:        127.0.0.53#53
+
+Non-authoritative answer:
+Name:   google.com
+Address: 142.250.185.206
+Name:   google.com
+Address: 2a00:1450:4001:827::200e
+-Узнать ip адресс домена зная только имя
