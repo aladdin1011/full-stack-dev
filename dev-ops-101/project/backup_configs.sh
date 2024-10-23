@@ -4,7 +4,7 @@
 read -p "Введите имя файла для резервного копирования: " filename
 
 # Проверяем, существует ли файл
-if [[ ! -f "$filename" ]]; then
+if [ ! -f "$filename" ]; then
     echo "Ошибка: файл '$filename' не существует."
     exit 1
 fi
