@@ -4,12 +4,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 api_key = os.environ.get("API_KEY")
-debug_mode = os.environ.get("DEBUG_MODR")
+debug_mode = os.environ.get("DEBUG_MODE")
 
-print(f"API_KEY {api_key}")
-print(f"debug_mode {debug_mode}")
+print(f"API_KEY: {api_key}")
+print(f"DEBUG_MODE: {debug_mode}")
 
-if debug_mode == True:
-    print("Приложение запущенно в режиме откладки")
+
+if debug_mode == "True":
+    print("Приложение запущено в режиме откладки")
 else:
     print("Приложение запущено в обычном режиме")
