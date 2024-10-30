@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "lesson-6"
+name = "final-project"
 version = "0.1.0"
 description = ""
 authors = ["aladdin1011 <nurmakov2015@gmail.com>"]
@@ -7,9 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-numpy = "^2.1.2"
-pandas = "^2.2.3"
-requests = "^2.32.3"
+fastapi = "^0.115.4"
+uvicorn = "^0.32.0"
 
 
 [build-system]
