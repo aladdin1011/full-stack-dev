@@ -9,13 +9,6 @@ app = FastAPI()
 def get_tasks():
     return tasks
 
-@app.get("/tasks/")
-def pumpa_tasks(task_id: str):
-    if task_id > 0:
-        raise
-    return
-
-
 @app.get("/tasks/{task_id}")
 def get_task(task_id: int):
     if task_id >= len(tasks) or task_id < 0:
