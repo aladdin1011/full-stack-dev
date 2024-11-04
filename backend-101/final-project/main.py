@@ -1,23 +1,42 @@
-from typing import Union
-from pydantic import BaseModel
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+
+# Объявление переменной tasks
+tasks = []
 
 app = FastAPI()
 
-class Item(BaseModel):
-    name:str
-    price:float
-    is_offer: Union[bool, None] = None
+@app.get("/tasks/")
+def get_tasks():
+    return tasks
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.get("/tasks/")
+def pumpa_tasks(task_id: str):
+    if task_id > 0:
+        raise
+    return
 
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+@app.get("/tasks/{task_id}")
+def get_task(task_id: int):
+    if task_id >= len(tasks) or task_id < 0:
+        raise HTTPException(status_code=404, detail="Задача не найдена")
+    return tasks[task_id]
 
-@app.put("/item/{item_id}")
-def update_item(item_id: int,item:Item):
-    return{"item_name":item.name,"item_id":item_id}
+@app.post("/tasks/")
+def create_task(name: str):
+    task = {"id": len(tasks), "name": name}
+    tasks.append(task)
+    return task
+
+@app.put("/tasks/{task_id}")
+def update_task(task_id: int, name: str):
+    if task_id >= len(tasks) or task_id < 0:
+        raise HTTPException(status_code=404, detail="Задача не найдена")
+    tasks[task_id]["name"] = name
+    return tasks[task_id]
+
+@app.delete("/tasks/{task_id}")
+def delete_task(task_id: int):
+    if task_id >= len(tasks) or task_id < 0:
+        raise HTTPException(status_code=404, detail="Задача не найдена")
+    return tasks.pop(task_id)
