@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Примерчик</title>
+</head>
+<body>
+    <h1>Zhas</h1>
+    <p>Я студент третьего курса в области <strong>кибербезопасности.</strong> Увлекаюсь программированием на <em>Python</em> и разработкой приложений.</p>
+    <hr>
+    <img src="images/catcute.png" alt="Милый кот" title="Это котик" width="400">
+    <hr>
+    <a href="https://www.youtube.com/">Мой любимый сайт</a>
+    <div id="hobbies-section">
+        <h2>
+            <strong>Хобби</strong>
+        </h2>
+        <ul>
+            <li>Видеоигры, которые я играю
+                <ol>
+                    <li>Stardew Valley</li>
+                    <li>Katana ZERO</li>
+                    <li>Ghost of Tsushima</li>
+                </ol>
+            </li>
+            <li>Баскетбол</li>
+            <li>Настольные игры</li>
+        </ul>
+    </div>
+    <div id="favorite-books-section">
+        <h2>Таблица любимых книг или расписания</h2>
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>Название</th>
+                <th>Автор</th>
+                <th>Год</th>
+            </tr>
+            <tr>
+                <td>Маленький принц</td>
+                <td>Антуан де Сент-Экзюпери</td>
+                <td>1943</td>
+            </tr>
+            <tr>
+                <td>1984</td>
+                <td>Джордж Оруэлл</td>
+                <td>1949</td>
+            </tr>
+            <tr>
+                <td>Мастер и Маргарита</td>
+                <td>Михаил Булгаков</td>
+                <td>1966</td>
+            </tr>
+        </table>
+    </div>
+    <hr>
+    <div>
+        <h2>Контактная форма</h2>
+        <form action="/submit" method="POST">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name">
+            
+            <label for="email">Электронная почта:</label>
+            <input type="email" id="email" name="email">
+            
+            <label for="message">Сообщение:</label>
+            <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            
+            <button type="submit">Отправить</button>
+        </form>
+    </div> 
+</body>
+</html>
