@@ -2,10 +2,13 @@ def get_rest():
     print("Добро пожаловать! Выберите: активный отдых (1) или расслабляющий отдых(2)")
     try: 
         save = int(input("Введите (1 или 2): "))
+        if save not in [1,2]:
+            print("Введите только 1 или 2.")
+            return None
         return save
     except ValueError:
-        print("Введите (1-2)")
-        return
+        print("Введите корректное число (1 или 2).")
+        return None
 
 def rest(save):
     if save == 1:
