@@ -22,7 +22,7 @@ def get_products():
             continue
     return prices
 
-def  discount(prices):
+def discount(prices):
     discount_items = list(filter(lambda x: x>100,prices))
     non_discount_prices = list(filter(lambda x: x<=100,prices))
     discount_prices = list(map(lambda x: x*0.9,discount_items))
