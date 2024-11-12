@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav id="nav4">
+        <a href="index.html">Главная страница</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+    </nav>
+
+    <main>
+        <section class="contact-info">
+            <h1>Свяжитесь с нами</h1>
+            <p>Мы всегда рады услышать от вас! Ниже вы найдете способы связи с нами.</p>
+
+            <h2>Адрес</h2>
+            <p>1, г. Алматы, ул. Абая, 1</p>
+
+            <h2>Телефон</h2>
+            <p>+7 (777) 777-77-77</p>
+
+            <h2>Электронная почта</h2>
+            <p><a href="mailto:nurmakov2015@gmail.com">nurmakov2015@gmail.com</a></p>
+
+            <h2>Социальные сети</h2>
+            <ul>
+                <li><a href="https://www.facebook.com/">Facebook</a></li>
+                <li><a href="https://www.twitter.com/">Twitter</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+            </ul>
+        </section>
+
+        <section class="contact-form">
+            <h2>Отправьте нам сообщение</h2>
+            <form action="/submit" method="POST">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Ваша электронная почта:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Ваше сообщение:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Zhas. Все права защищены.</p>
+    </footer>
+</body>
+</html>

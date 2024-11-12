@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav id="nav4">
+        <a href="index.html">Главная страница</a>
+        <a href="about.html">О нас</a>
+        <a href="contact.html">Контакты</a>
+    </nav>
+    <header>
+        <h1>Zhas</h1>
+        <p>Я студент третьего курса в области <strong>кибербезопасности.</strong> Увлекаюсь программированием на <em>Python</em> и разработкой приложений.</p>
+    </header>
+    <main>
+        <section>
+            <hr>
+            <img src="images/catcute.png" alt="Милый кот" title="Это котик" width="400">
+            <hr>
+            <a href="https://www.youtube.com/">Мой любимый сайт</a>
+        </section>
+        
+        <section>
+            <audio controls>
+                <source src="audio/bensound-rocafort.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает элемент <code>audio</code>.
+            </audio>
+            <video controls width="600">
+                <source src="video/video.mp4" type="video/mp4">
+                Ваш браузер не поддерживает элемент <code>video</code>.
+            </video>
+        </section>
+
+        <section>
+            <figure>
+                <img src="images/catcute.png" alt="Опасный котик">
+                <figcaption>Опасный котик в сапогах</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <canvas id="myCanvas" width="400" height="200"></canvas>
+            <script>
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                context.fillStyle = "blue";
+                context.fillRect(50, 50, 300, 100);
+            </script>
+        </section>
+
+        <section>
+            <h2><strong>Хобби</strong></h2>
+            <ul>
+                <li>Видеоигры, которые я играю
+                    <ol>
+                        <li>Stardew Valley</li>
+                        <li>Katana ZERO</li>
+                        <li>Ghost of Tsushima</li>
+                    </ol>
+                </li>
+                <li>Баскетбол</li>
+                <li>Настольные игры</li>
+            </ul>
+        </section>
+
+        <section id="favorite-books-section">
+            <h2>Таблица любимых книг</h2>
+            <table border="1" cellpadding="10">
+                <tr>
+                    <th>Название</th>
+                    <th>Автор</th>
+                    <th>Год</th>
+                </tr>
+                <tr>
+                    <td>Маленький принц</td>
+                    <td>Антуан де Сент-Экзюпери</td>
+                    <td>1943</td>
+                </tr>
+                <tr>
+                    <td>1984</td>
+                    <td>Джордж Оруэлл</td>
+                    <td>1949</td>
+                </tr>
+                <tr>
+                    <td>Мастер и Маргарита</td>
+                    <td>Михаил Булгаков</td>
+                    <td>1966</td>
+                </tr>
+            </table>
+        </section>
+
+        <section>
+            <h2>Контактная форма</h2>
+            <form action="/submit" method="POST">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name">
+                
+                <label for="email">Электронная почта:</label>
+                <input type="email" id="email" name="email">
+                
+                <label for="message">Сообщение:</label>
+                <textarea id="message" name="message" rows="4" cols="50"></textarea>
+                
+                <button type="submit">Отправить</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Zhas. Все права защищены.</p>
+    </footer>
+</body>
+</html>
