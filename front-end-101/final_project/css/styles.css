@@ -1,19 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed');
+
 .menu-main {
   list-style: none;
-  margin: 40px 0 5px;
-  padding: 25px 0 5px;
+  margin: 0; /* Убираем отступы сверху и снизу */
+  padding: 15px 0; /* Уменьшаем отступы сверху и снизу для более компактного меню */
   text-align: center;
   background: white;
+  position: fixed; /* Закрепляем меню */
+  top: 0; /* Меню будет на самом верху */
+  left: 0;
+  width: 100%; /* Меню будет растягиваться на всю ширину */
+  z-index: 1000; /* Меню будет поверх остальных элементов на странице */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень под меню */
 }
-.menu-main li {display: inline-block;}
+
+/* Добавляем отступ сверху для контента, чтобы он не перекрывался меню */
+body {
+  margin-top: 60px; /* Добавляем отступ сверху, чтобы контент не скрывался под меню */
+}
+
+.menu-main li {
+  display: inline-block;
+}
+
 .menu-main li:after {
   content: "|";
   color: #606060;
   display: inline-block;
-  vertical-align:top;
+  vertical-align: top;
 }
-.menu-main li:last-child:after {content: none;}
+
+.menu-main li:last-child:after {
+  content: none;
+}
+
 .menu-main a {
   text-decoration: none;
   font-family: 'Ubuntu Condensed', sans-serif;
@@ -24,10 +44,19 @@
   font-size: 17px;
   text-transform: uppercase;
   display: inline-block;
-  transition: color .2s;
+  transition: color 0.2s;
 }
-.menu-main a, .menu-main a:visited {color: #9d999d;}
-.menu-main a.current, .menu-main a:hover{color: #feb386;}
+
+.menu-main a,
+.menu-main a:visited {
+  color: #9d999d;
+}
+
+.menu-main a.current,
+.menu-main a:hover {
+  color: #feb386;
+}
+
 .menu-main a:before,
 .menu-main a:after {
   content: "";
@@ -38,16 +67,211 @@
   bottom: -5px;
   left: 50%;
   background: #feb386;
-  transition: .8s;
+  transition: 0.8s;
 }
-.menu-main a:hover:before, .menu-main .current:before {left: 0;}
-.menu-main a:hover:after, .menu-main .current:after {right: 0;}   
+
+.menu-main a:hover:before,
+.menu-main .current:before {
+  left: 0;
+}
+
+.menu-main a:hover:after,
+.menu-main .current:after {
+  right: 0;
+}
+
 @media (max-width: 550px) {
-.menu-main {padding-top: 0;}
-.menu-main li {display: block;}
-.menu-main li:after {content: none;}
-.menu-main a {
-  padding: 25px 0 20px; 
-  margin: 0 30px;
+  .menu-main {
+    padding-top: 0;
+  }
+
+  .menu-main li {
+    display: block;
+  }
+
+  .menu-main li:after {
+    content: none;
+  }
+
+  .menu-main a {
+    padding: 25px 0 20px;
+    margin: 0 30px;
+  }
 }
+
+/* Общие стили для страницы */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Секция "Обо мне" */
+.about-me {
+  padding: 50px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+/* Заголовок */
+.about-me h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Контент блока "Обо мне" */
+.about-me-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Изображение профиля */
+.profile-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* Текстовая часть */
+.bio {
+  max-width: 600px;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #555;
+}
+
+.bio ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 18px;
+  color: #555;
+}
+
+.bio li {
+  margin: 10px 0;
+}
+
+.bio li strong {
+  color: #333;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+  .about-me-content {
+      padding: 10px;
+  }
+
+  .profile-img {
+      width: 120px;
+      height: 120px;
+  }
+
+  .bio {
+      font-size: 16px;
+  }
+}
+.contact-form-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-form-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+  text-transform: capitalize;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f7f7f7;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 12px;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.submit-btn:active {
+  background-color: #39923d;
+  transform: translateY(1px);
+}
+
+.submit-btn:focus {
+  outline: none;
 }
