@@ -4,6 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Примерчик</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+        header {
+            text-align: center;
+            padding: 2em 0;
+            background-color: #00509e;
+            color: white;
+        }
+        header h1 {
+            margin-bottom: 0.5em;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            color: #00509e;
+        }
+        img, video, audio, canvas {
+            display: block;
+            margin: 10px auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #00509e;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f4f4f4;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #333;
+            color: white;
+        }
+        form {
+            display: grid;
+            gap: 10px;
+        }
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, textarea, button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #00509e;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #003f7e;
+        }
+    </style>
 </head>
 <body>
     <!-- Основное содержимое страницы -->
@@ -19,25 +105,35 @@
             <hr>
             <a href="https://www.youtube.com/">Мой любимый сайт</a>
         </section>
-        <audio controls>
-            <source src="audio/bensound-rocafort.mp3" type="audio/mpeg">
-            Ваш браузер не поддерживает элемент <code>audio</code>.
-        </audio>
-        <video controls width="600">
-            <source src="video/video.mp4" type="video/mp4">
-            Ваш браузер не поддерживает элемент <code>vidoe</code>
-        </video>
-        <figure>
-            <img src="images/catcute.png" alt="Опасный котик">
-            <figcaption>Опасный котик в сапогах </figcaption>
-        </figure>
-        <canvas id="myCanvas" width="400" height="200"></canvas>
-        <script>
-            var canvas = document.getElementById("myCanvas")
-            var context = canvas.getContext("2d")
-            context.fillStyle = "blue";
-            context.fillRect(50,50,300,100);
-        </script>
+
+        <section>
+            <audio controls>
+                <source src="audio/bensound-rocafort.mp3" type="audio/mpeg">
+                Ваш браузер не поддерживает элемент <code>audio</code>.
+            </audio>
+            <video controls width="600">
+                <source src="video/video.mp4" type="video/mp4">
+                Ваш браузер не поддерживает элемент <code>video</code>.
+            </video>
+        </section>
+
+        <section>
+            <figure>
+                <img src="images/catcute.png" alt="Опасный котик">
+                <figcaption>Опасный котик в сапогах</figcaption>
+            </figure>
+        </section>
+
+        <section>
+            <canvas id="myCanvas" width="400" height="200"></canvas>
+            <script>
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                context.fillStyle = "blue";
+                context.fillRect(50, 50, 300, 100);
+            </script>
+        </section>
+
         <section>
             <h2><strong>Хобби</strong></h2>
             <ul>
