@@ -12,7 +12,6 @@
 - [x] back-end-101 - Завершен
 
 ### Frontend
-- [x] front-end-101 - В процессе
-
+- [x] front-end-101 - Завершен
 ### Dev-ops
 - [x] dev-ops-101 - Завершен
