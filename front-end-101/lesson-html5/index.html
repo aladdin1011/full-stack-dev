@@ -23,6 +23,21 @@
             <source src="audio/bensound-rocafort.mp3" type="audio/mpeg">
             Ваш браузер не поддерживает элемент <code>audio</code>.
         </audio>
+        <video controls width="600">
+            <source src="video/video.mp4" type="video/mp4">
+            Ваш браузер не поддерживает элемент <code>vidoe</code>
+        </video>
+        <figure>
+            <img src="images/catcute.png" alt="Опасный котик">
+            <figcaption>Опасный котик в сапогах </figcaption>
+        </figure>
+        <canvas id="myCanvas" width="400" height="200"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas")
+            var context = canvas.getContext("2d")
+            context.fillStyle = "blue";
+            context.fillRect(50,50,300,100);
+        </script>
         <section>
             <h2><strong>Хобби</strong></h2>
             <ul>
