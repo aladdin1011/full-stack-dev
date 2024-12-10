@@ -1,4 +1,3 @@
-root@zhas-server:~ # sudo ufw status
 Status: active
 
 To                         Action      From
