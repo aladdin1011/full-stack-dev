@@ -1,0 +1,14 @@
+root@zhas-server:~ # sudo ufw status
+Status: active
+
+To                         Action      From
+--                         ------      ----
+80                         ALLOW       Anywhere
+80/tcp                     ALLOW       Anywhere
+443/tcp                    ALLOW       Anywhere
+22                         ALLOW       255.255.255.255 (fake)
+22/tcp                     LIMIT       Anywhere
+80 (v6)                    ALLOW       Anywhere (v6)
+80/tcp (v6)                ALLOW       Anywhere (v6)
+443/tcp (v6)               ALLOW       Anywhere (v6)
+22/tcp (v6)                LIMIT       Anywhere (v6)
