@@ -9,6 +9,7 @@ python = "^3.12"
 requests = "^2.32.3"
 fastapi = "^0.115.6"
 pydantic = {extras = ["email"], version = "^2.10.3"}
+bcrypt = "^4.2.1"
 
 [tool.poetry.group.dev.dependencies]
 uvicorn = "^0.34.0"
