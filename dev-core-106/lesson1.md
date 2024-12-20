@@ -1,8 +1,8 @@
-Welcome to the project!
+## Welcome to the project!
 
-This project is designed to demonstrate Git commit practices.
+- This project is designed to demonstrate Git commit practices.
 
-This project aims to enhance Git skills.
+- This project aims to enhance Git skills.
 
 ## Project Goals
 - Demonstrate Git commit best practices.
