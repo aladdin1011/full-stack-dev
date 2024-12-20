@@ -1,1 +1,2 @@
 Welcome to the project!
+This project is designed to demonstrate Git commit practices.
