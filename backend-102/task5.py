@@ -50,6 +50,6 @@ def login_user(credentials: LoginUser):
     # Проверка пароля
     if not bcrypt.checkpw(credentials.password.encode('utf-8'), user["password"].encode('utf-8')):
         raise HTTPException(status_code=401, detail="Invalid email or password")
-    
+
     return {"message": "Login successful!"}
 
