@@ -34,7 +34,7 @@ def register_user(user: RegisterUser):
         "id": len(users) + 1,
         "name": user.name,
         "email": user.email,
-        "password": hashed_password,  # Пароль пока хранится как обычный текст
+        "password": hashed_password,
         "role": user.role,
     }
     users.append(new_user)
