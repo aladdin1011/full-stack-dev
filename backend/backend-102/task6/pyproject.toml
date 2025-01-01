@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "task6"
+version = "0.1.0"
+description = ""
+authors = ["aladdin1011 <nurmakov2015@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.115.6"
+uvicorn = {extras = ["standard"], version = "^0.34.0"}
+python-jose = {extras = ["bcrypt"], version = "^3.3.0"}
+bcrypt = "^4.2.1"
+pydantic = {extras = ["email"], version = "^2.10.4"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
