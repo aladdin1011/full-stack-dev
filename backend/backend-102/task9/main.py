@@ -146,7 +146,7 @@ def refresh_access_token(refresh_token: str):
     try:
         # Проверяем валидность Refresh Token
         payload = jwt.decode(refresh_token, SECRET_KEY , algorithms=[ALGORITHM])
-        token_id = payload.get("id")
+        token_id = payload.get("token_id")
         email = payload.get("sub")
         
         # Проверяем, что токен активен
