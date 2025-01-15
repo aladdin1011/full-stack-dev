@@ -43,7 +43,16 @@ class Travel(BaseModel):
     description: str
     data: datetime
     private: str = Field(default="public", pattern="^(public|private)$")    
-    routes = List[str]
+    routes: List[str]
+
+new_travel = Travel(
+    id = 1,
+    name="Trip to Almaty",
+    description="Traveling to Almaty",
+    data=datetime.now(),
+    private="public",
+    routes=[]
+)
 
 def create_access_token(data: dict):
     #Добавляем дату истечения токена 
@@ -195,3 +204,13 @@ def logout_user(token: str= Depends(ouath2_scheme)):
     
     return {"message" : "Successfully logged out"}
 
+@app.post("/travels")
+def post_travel(travel: Travel, token: str = Depends(ouath2_scheme)):
+    user_data = verify_access_token(token)
+    traveling.append(travel)
+    return {"message": "Travel added successfully", "travel": travel}
+
+@app.get("/travels")
+def get_travels(token: str = Depends(ouath2_scheme)):
+    user_data = verify_access_token(token)
+    
