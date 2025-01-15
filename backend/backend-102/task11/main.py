@@ -44,6 +44,7 @@ class Travel(BaseModel):
     data: datetime
     private: str = Field(default="public", pattern="^(public|private)$")    
     routes: List[str]
+    owner: str
 
 new_travel = Travel(
     id = 1,
@@ -51,7 +52,8 @@ new_travel = Travel(
     description="Traveling to Almaty",
     data=datetime.now(),
     private="public",
-    routes=[]
+    routes=[],
+    owner = "zhas"
 )
 
 def create_access_token(data: dict):
@@ -207,10 +209,29 @@ def logout_user(token: str= Depends(ouath2_scheme)):
 @app.post("/travels")
 def post_travel(travel: Travel, token: str = Depends(ouath2_scheme)):
     user_data = verify_access_token(token)
-    traveling.append(travel)
-    return {"message": "Travel added successfully", "travel": travel}
+    new_travel = {
+        "id": len(traveling) + 1,
+        "name": travel.name, #owner
+        "description": travel.description,
+        "data": travel.data,
+        "private": travel.private,
+        "routes": travel.routes,
+        "owner": user_data["name"]  #Привязка пользователя
+    }
+    traveling.append(new_travel)
+    return {"message": "Travel added successfully", "travel": new_travel}
 
 @app.get("/travels")
-def get_travels(token: str = Depends(ouath2_scheme)):
+def get_travels(travel_id: int , token: str = Depends(ouath2_scheme)):
     user_data = verify_access_token(token)
+    my_travel = next((t for t in traveling if t["id"] == travel_id), None)
+    
+    return {"travels": traveling}
+
+@app.update("/travels/{travel_id}")
+def update_travel(travel_id: int, travel: Travel, token: str = Depends(ouath2_scheme)):
+    user_data = verify_access_token(token)
+    my_travel = next((t for t in traveling if t["id"] == travel_id), None)
+    if not my_travel:
+        raise HTTPException(status_code=404, detail="Travel not found")
     
