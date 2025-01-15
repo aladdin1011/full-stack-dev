@@ -41,19 +41,18 @@ class Travel(BaseModel):
     id: int
     name: str
     description: str
-    data: datetime
+    date: datetime
     private: str = Field(default="public", pattern="^(public|private)$")    
     routes: List[str]
-    owner: str
 
 new_travel = Travel(
     id = 1,
     name="Trip to Almaty",
     description="Traveling to Almaty",
-    data=datetime.now(),
+    date=datetime.now(),
     private="public",
     routes=[],
-    owner = "zhas"
+    
 )
 
 def create_access_token(data: dict):
@@ -213,22 +212,23 @@ def post_travel(travel: Travel, token: str = Depends(ouath2_scheme)):
         "id": len(traveling) + 1,
         "name": travel.name, #owner
         "description": travel.description,
-        "data": travel.data,
+        "date": travel.date,
         "private": travel.private,
         "routes": travel.routes,
-        "owner": user_data["name"]  #Привязка пользователя
+        "owner": user_data["sub"]  #Привязка пользователя
     }
     traveling.append(new_travel)
     return {"message": "Travel added successfully", "travel": new_travel}
 
 @app.get("/travels")
-def get_travels(travel_id: int , token: str = Depends(ouath2_scheme)):
+def get_travels(token: str = Depends(ouath2_scheme)):
     user_data = verify_access_token(token)
-    my_travel = next((t for t in traveling if t["id"] == travel_id), None)
-    
-    return {"travels": traveling}
 
-@app.update("/travels/{travel_id}")
+    user_travel =[p for p in traveling if p["owner"] == user_data["sub"]]
+    
+    return {"travels": user_travel}
+
+@app.put("/travels/{travel_id}")
 def update_travel(travel_id: int, travel: Travel, token: str = Depends(ouath2_scheme)):
     user_data = verify_access_token(token)
     my_travel = next((t for t in traveling if t["id"] == travel_id), None)
