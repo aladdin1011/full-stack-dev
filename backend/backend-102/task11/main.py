@@ -221,12 +221,23 @@ def post_travel(travel: Travel, token: str = Depends(ouath2_scheme)):
     return {"message": "Travel added successfully", "travel": new_travel}
 
 @app.get("/travels")
-def get_travels(token: str = Depends(ouath2_scheme)):
+def get_user_travels(token: str = Depends(ouath2_scheme)):
     user_data = verify_access_token(token)
 
     user_travel =[p for p in traveling if p["owner"] == user_data["sub"]]
     
     return {"travels": user_travel}
+
+@app.get("/travels/{travel_id}")
+def get_travel_id(travel_id: int, token: str = Depends(ouath2_scheme)):
+    user_data = verify_access_token(token)
+
+    user_travel =[p for p in traveling if p["owner"] == user_data["sub"] and p["id"] == travel_id]
+    if not user_travel:
+        raise HTTPException(status_code=404, detail="Travel not found")
+    
+    return {"travel": user_travel}    
+
 
 @app.put("/travels/{travel_id}")
 def update_travel(travel_id: int, travel: Travel, token: str = Depends(ouath2_scheme)):
