@@ -210,7 +210,7 @@ def post_travel(travel: Travel, token: str = Depends(ouath2_scheme)):
     user_data = verify_access_token(token)
     new_travel = {
         "id": len(traveling) + 1,
-        "name": travel.name, #owner
+        "name": travel.name,
         "description": travel.description,
         "date": travel.date,
         "private": travel.private,
@@ -248,4 +248,16 @@ def update_travel(travel_id: int, travel: Travel, token: str = Depends(ouath2_sc
     
     my_travel.update(travel.dict())
     return{"message": "Travel updated successfully", "travel": my_travel}
+
+@app.delete("/travels/{travel_id}")
+def delete_travel_id(travel_id: int, token: str = Depends(ouath2_scheme)):
+    user_data = verify_access_token(token)
+    global traveling
     
+    my_travel =[p for p in traveling if p["owner"] == user_data["sub"] and p["id"] == travel_id]
+    
+    if not my_travel:
+        raise HTTPException(status_code=404, detail="Travel not found or not authorized")
+
+    traveling = [t for t in traveling if t["id"] != travel_id]
+    return {"message": "Travel deleted successfully"}    
