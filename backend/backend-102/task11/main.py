@@ -244,5 +244,8 @@ def update_travel(travel_id: int, travel: Travel, token: str = Depends(ouath2_sc
     user_data = verify_access_token(token)
     my_travel = next((t for t in traveling if t["id"] == travel_id), None)
     if not my_travel:
-        raise HTTPException(status_code=404, detail="Travel not found")
+        raise HTTPException(status_code=404, detail="Travel not found or not authorized")
+    
+    my_travel.update(travel.dict())
+    return{"message": "Travel updated successfully", "travel": my_travel}
     
