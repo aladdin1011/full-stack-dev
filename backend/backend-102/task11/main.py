@@ -1,13 +1,14 @@
 from fastapi import FastAPI,Depends, HTTPException
 from fastapi.security  import OAuth2PasswordBearer
 from datetime import datetime,timedelta
-from jose import jwt, JWTError, ExpiredSignatureError
+from jose import jwt, JWTError
 from pydantic import BaseModel,EmailStr, Field
 import bcrypt
 from uuid import uuid4
 from typing import List
 from dotenv import load_dotenv
 import os 
+import jwt 
 
 load_dotenv()
 
@@ -82,8 +83,12 @@ def verify_access_token(token: str):
     try:
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         return payload  # Возвращаем данные токена, если он валиден
+    except jwt.ExpiredSignatureError:
+        raise HTTPException(status_code=401, detail="Token expired")
+    except jwt.InvalidTokenError:
+        raise HTTPException(status_code=401, detail="Invalid token")
     except jwt.JWTError:
-        raise HTTPException(status_code=401, detail="Invalid or expired token")
+        raise HTTPException(status_code=401, detail="An error occurred while processing the token")
 
 @app.post("/auth/register")
 def register_user(user: RegisterUser):
