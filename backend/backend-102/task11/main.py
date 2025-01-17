@@ -6,6 +6,10 @@ from pydantic import BaseModel,EmailStr, Field
 import bcrypt
 from uuid import uuid4
 from typing import List
+from dotenv import load_dotenv
+import os 
+
+load_dotenv()
 
 app = FastAPI()
 
@@ -14,10 +18,10 @@ activate_refrseh_tokens = {}
 ouath2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 # Конфигурация для JWT
-SECRET_KEY = "my_secret_key"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
-REFRESH_TOKEN_EXPIRE_DAYS = 7   
+SECRET_KEY = os.getenv("SECRET_KEY")
+ALGORITHM = os.getenv("ALGORITHM")
+ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))
+REFRESH_TOKEN_EXPIRE_DAYS = int(os.getenv("REFRESH_TOKEN_EXPIRE_DAYS"))
 
 users = [
     {"id": 1, "name": "Adilet", "email": "adilet@example.com", "password": bcrypt.hashpw("password".encode('utf-8'), bcrypt.gensalt()).decode('utf-8'), "role": "admin"},
