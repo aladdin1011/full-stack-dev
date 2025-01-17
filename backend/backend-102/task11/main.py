@@ -85,14 +85,6 @@ def verify_access_token(token: str):
     except jwt.JWTError:
         raise HTTPException(status_code=401, detail="Invalid or expired token")
 
-def check_user_role(token_data: dict, required_role: str):
-    user_role = token_data.get("role")
-    if user_role != required_role:
-        raise HTTPException(
-            status_code=403,
-            detail=f"Access denied: requires {required_role} role"
-        )
-
 @app.post("/auth/register")
 def register_user(user: RegisterUser):
     if any(u["email"] == user.email for u in users):
