@@ -6,3 +6,4 @@ task7/venv
 task7/__pycache__
 task8/__pycache__
 task8/venvs
+.env
