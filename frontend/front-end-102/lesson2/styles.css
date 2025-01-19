@@ -1,0 +1,38 @@
+h1 {
+    color: red;
+    background-color: yellow;
+    font-size: 80px;
+}
+.tesh1 {
+    color: silver;
+    background-color: blueviolet;
+    font-size: 90px;
+}
+#test2 {
+    color: green;
+    background-color: yellow;
+    font-size: 100px;
+}
+h2 {
+    color: blue;
+}
+h3 {
+    color: green;
+    background-color: white;
+    font-size: 50px;
+}
+button {
+    color: white;
+    background-color: blue;
+    font-size: 30px;
+}
+.button {
+    color: white;
+    background-color: greenyellow;
+    font-size: 40px;
+}
+#main_button {
+    color: white;
+    background-color: red;
+    font-size: 50px;
+}
