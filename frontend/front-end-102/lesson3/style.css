@@ -1,8 +1,31 @@
 .megabox{
-    background-color: aqua;
+    background-color: lightblue;
+    width: 200px;
+    padding: 15px;
+    border: 10px solid black;
+    margin: 10px;
+
 }
 .box{
     background-color: chartreuse;
+    width: 150px;
+    padding: 10px;
+    border: 2px solid black;
+    margin: 20px;
+    box-sizing: border-box;
+}
+.megabox1{
+    background-color: lightblue;
+    width: 200px;
     padding: 15px;
-    color: black;
+    border: 10px solid black;
+    margin: 10px;
+
+}
+.box1{
+    background-color: chartreuse;
+    width: 150px;
+    padding: 10px;
+    border: 2px solid black;
+    margin: 20px;
 }
