@@ -29,3 +29,20 @@
     border: 2px solid black;
     margin: 20px;
 }
+
+.testbox{
+    background-color: lightblue;
+    border: 4px solid black;
+    margin: 10px;
+    width: 100px;
+    padding: 10px;
+}
+
+.testbox1{
+    background-color: lightblue;
+    border: 4px solid black;
+    box-sizing: border-box;
+    margin: 10px;
+    width: 100px;
+    padding: 10px;
+}
