@@ -1,0 +1,38 @@
+h1{
+    text-align: center;
+}
+
+.color{
+    border: 1px solid black;
+    width: 500px;
+    margin: 15px auto;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+.named-color{
+    background-color: black;
+}
+.hex-color{
+    background-color: #7811b4;
+}
+.rgb{
+    background-color: rgba(199, 87, 221, 0.747);
+}
+.hsl{
+    background-color: hsl(270, 28%, 54%);
+}   
+
+.background-example{
+    margin: 20px auto;
+    height: 350px;
+    width: 800px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.bg-1{
+    background-image: url(https://picsum.photos/200);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+}
