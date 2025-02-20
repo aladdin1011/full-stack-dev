@@ -1,0 +1,14 @@
+.content{
+    margin: 150px;
+    padding: 20px;
+}
+.text{
+    font-weight:400;
+    font-size:20px;
+    line-height: 1.2cm;
+    text-align: center;
+    font-family: 'Montserrat', Courier, monospace;  
+    box-sizing: border-box;
+    background-color: bisque;
+    border-left: 7px solid grey;
+}
