@@ -1,0 +1,33 @@
+.box{
+    width: 520px;
+    margin:0px auto;
+    padding:5px;
+    border: 2px solid #000;
+}
+
+.chill{
+    width: 500px;
+    margin:5px auto;
+    padding:5px;
+    border: 2px solid blue;
+}
+
+.one{
+    background-color: aqua;
+    padding: 5px;
+}
+
+.two{
+    background-color: yellow;
+    padding: 5px;
+}
+
+.three{
+    background-color: green;
+    padding: 5px;
+}
+
+.four{
+    background-color: red;
+    padding: 5px;
+}
