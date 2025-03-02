@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-links">
+                    <a href="#about">Обо мне</a>
+                    <a href="#projects">Проекты</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://x.com/yourusername" target="_blank" title="X/Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <button class="theme-toggle" onclick="toggleTheme()">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Секция "Обо мне" -->
+        <section id="about" class="section">
+            <div class="section-header">
+                <h1>Обо мне</h1>
+                <p class="subtitle">Разработчик программного обеспечения</p>
+            </div>
+            <div class="about-card">
+                <div class="about-content">
+                    <p>Приветствую! Я разработчик с страстью к созданию элегантных решений сложных задач. 
+                    Специализируюсь на full-stack разработке с использованием современных технологий.</p>
+                    <p>В свободное время изучаю новые технологии, вношу вклад в open-source проекты
+                    и делюсь знаниями через технические статьи.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Frontend</h3>
+                        <p>React, TypeScript, Tailwind</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Backend</h3>
+                        <p>Node.js, Express, PostgreSQL</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Tools</h3>
+                        <p>Git, Docker, VS Code</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция проектов -->
+        <section id="projects" class="section">
+            <div class="section-header">
+                <h2>Мои проекты</h2>
+                <p class="subtitle">Последние работы и пет-проекты</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3>Проект 1</h3>
+                        <p class="project-description">Веб-приложение, построенное на React и Node.js</p>
+                        <p class="project-details">Полнофункциональное веб-приложение с аутентификацией, управлением данными и real-time функционалом.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/username/project1" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://project1.demo" target="_blank">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Добавьте аналогичные карточки для других проектов -->
+            </div>
+        </section>
+
+        <!-- Форма контактов -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h2>Связаться со мной</h2>
+                <p class="subtitle">Есть вопросы или предложения? Напишите мне!</p>
+            </div>
+            <div class="contact-card">
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-user"></i>
+                                Имя
+                            </label>
+                            <input type="text" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </label>
+                            <input type="email" placeholder="ваш@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <i class="fas fa-message"></i>
+                            Сообщение
+                        </label>
+                        <textarea placeholder="Ваше сообщение..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">
+                        <i class="fas fa-paper-plane"></i>
+                        Отправить сообщение
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
+        }
+
+        // Восстановление темы при загрузке
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-theme');
+        }
+    </script>
+</body>
+</html>
