@@ -1,9 +1,8 @@
 .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 200px;
+    height: 50px;
     background-color: lightgray;
+    justify-content: space-between;
   }
   
   .box {
@@ -11,8 +10,5 @@
     height: 50px;
     background-color: steelblue;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   
